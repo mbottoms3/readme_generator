@@ -1,20 +1,57 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  let yourLicense = "";
+  yourLicense = `This project uses the ${license} license.  
+  
+  [![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)](${renderLicenseLink(license)})`;
+  return yourLicense;
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === 'GNU') {
+    return `https://choosealicense.com/licenses/agpl-3.0/`;
+  }
+  if (license === 'MIT') {
+    return `https://choosealicense.com/licenses/mit/`;
+  } 
+  if (license === 'Apache') {
+    return `https://choosealicense.com/licenses/apache`;
+  }
+}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function generateMarkdown(userResponses) {
+  return `##${userResponses.name}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-`;
+  ## Description
+  ${userResponses.description}
+  ${userResponses.motivation}
+  
+  ## Table of Contents
+  1. Installation
+  2. Usage
+  3. Credits
+  4. License Information
+  5. Tests
+  6. Questions
+  
+      
+  ## Installation
+  The GitHub Repository can be found here: ${userResponses.github}
+  
+  ## Usage
+  ${userResponses.usage}
+  
+  ## Credits
+  ${userResponses.collaborators}
+  
+  ## License Information
+  ${renderLicenseBadge(userResponses.license)}
+  
+  ## Tests
+  ${userResponses.tests}
+  
+  ## Questions
+  If there are any questions please reach out to me at ${userResponses.email}` 
+  
 }
 
 module.exports = generateMarkdown;

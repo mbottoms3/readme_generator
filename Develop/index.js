@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
+
 
 inquirer.prompt([
     {
@@ -18,26 +20,42 @@ inquirer.prompt([
         message: 'What was the motivation for building this application?',
         name: 'motivation',
       },
-    {
+      {
         type: 'input',
       message: 'Please enter your GitHub Repository URL',
       name: 'github',
       },
       {
         type: 'input',
-      message: 'If there were any licenses, please enter them here.  If none, enter "None were used"',
-      name: 'licenses',
+      message: 'Please describe the usage of this app',
+      name: 'usage',
+      },
+      {
+        type: 'list',
+      message: 'Choose from which licenses you would like included',
+      choices: ['MIT', 'GNU', 'Apache'],
+      name: 'license',
       },
       {
         type: 'input',
       message: 'Does your application have any collaborators?  If not, enter "There were no collaborators on this project"',
       name: 'collaborators',
+      },
+      {
+        type: 'input',
+      message: 'Is there any relevant testing information?',
+      name: 'tests',
+      },
+      {
+        type: 'input',
+      message: 'Please enter your email',
+      name: 'email',
       }
    
 ]) 
 .then((data) => {
-    console.log(data);
-    fs.writeFile('README.md', createReadme(data), (err) => {
+    // console.log(data);
+    fs.writeFile('README.md', generateMarkdown(data), (err) => {
       if (err) {
         console.log(err);
       }
@@ -46,23 +64,5 @@ inquirer.prompt([
 
 
 
-function createReadme(userResponses) {
-console.log(userResponses);
-return `#${userResponses.name}
 
-## Description
-${userResponses.description}
-${userResponses.motivation}
-    
-## Installation
-The GitHub Repository can be found here: ${userResponses.github}
-
-## Credits
-${userResponses.collaborators}
-
-## License
-${userResponses.licenses}
-
-## Badges` 
-}
 
