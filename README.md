@@ -19,6 +19,7 @@ This application will save the user time by already having the template laid out
 ## Installation
 
 The GitHub Repository can be found here: https://github.com/mbottoms3/readme_generator
+
 Inquirer and FS must be installed to use this application.
 
 ## Usage
