@@ -42,3 +42,5 @@ NA
 ## Questions
 
 If there are any questions please reach out to me at bottoms.micah.3@gmail.com
+
+My github profile can be found here: https://github.com/mbottoms3
