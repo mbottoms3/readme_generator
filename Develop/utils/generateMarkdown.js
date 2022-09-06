@@ -1,3 +1,4 @@
+// Function return the selected license's badge
 function renderLicenseBadge(license) {
   let yourLicense = "";
   yourLicense = `This project uses the ${license} license.  
@@ -6,6 +7,7 @@ function renderLicenseBadge(license) {
   return yourLicense;
 }
 
+// Function to choose the appropriate license based on user selection
 function renderLicenseLink(license) {
   if (license === 'GNU') {
     return `https://choosealicense.com/licenses/agpl-3.0/`;
@@ -18,12 +20,14 @@ function renderLicenseLink(license) {
   }
 }
 
+
+// Function to be called in index.js which will write the following template including the user's responses
 function generateMarkdown(userResponses) {
   return `##${userResponses.name}
 
   ## Description
   ${userResponses.description}
-  
+
   ${userResponses.motivation}
   
   ## Table of Contents

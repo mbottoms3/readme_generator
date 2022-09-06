@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Brings in Inquirer, fs and the generateMarkdown function (custom module)
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-
+// Inquirer prompt asks the user questions in the terminal
 inquirer.prompt([
     {
       type: 'input',
@@ -57,8 +57,9 @@ inquirer.prompt([
       name: 'profile',
       }
 ]) 
+// .then uses the generateMarkdown with data collected from inquirer prompt to write the new markdown file
 .then((data) => {
-    // console.log(data);
+    
     fs.writeFile('README.md', generateMarkdown(data), (err) => {
       if (err) {
         console.log(err);
