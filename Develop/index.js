@@ -50,8 +50,12 @@ inquirer.prompt([
         type: 'input',
       message: 'Please enter your email',
       name: 'email',
+      },
+      {
+        type: 'input',
+      message: 'Please enter your github profile URL',
+      name: 'profile',
       }
-   
 ]) 
 .then((data) => {
     // console.log(data);

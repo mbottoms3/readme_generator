@@ -23,6 +23,7 @@ function generateMarkdown(userResponses) {
 
   ## Description
   ${userResponses.description}
+  
   ${userResponses.motivation}
   
   ## Table of Contents
@@ -50,7 +51,9 @@ function generateMarkdown(userResponses) {
   ${userResponses.tests}
   
   ## Questions
-  If there are any questions please reach out to me at ${userResponses.email}` 
+  If there are any questions please reach out to me at ${userResponses.email}
+
+  Github profile: ${userResponses.profile}` 
   
 }
 
