@@ -53,7 +53,7 @@ inquirer.prompt([
       },
       {
         type: 'input',
-      message: 'Please enter your github profile URL',
+      message: 'Please enter your github profile',
       name: 'profile',
       }
 ]) 

@@ -31,12 +31,12 @@ function generateMarkdown(userResponses) {
   ${userResponses.motivation}
   
   ## Table of Contents
-  1. Installation
-  2. Usage
-  3. Credits
-  4. License Information
-  5. Tests
-  6. Questions
+  1. [Installation](#installation)
+  2. [Usage](#usage)
+  3. [Credits](#usage)
+  4. [Licensing](#licensing)
+  5. [Tests](#test)
+  6. [Questions](#questions)
   
       
   ## Installation
@@ -48,7 +48,7 @@ function generateMarkdown(userResponses) {
   ## Credits
   ${userResponses.collaborators}
   
-  ## License Information
+  ## Licensing
   ${renderLicenseBadge(userResponses.license)}
   
   ## Tests
@@ -57,8 +57,11 @@ function generateMarkdown(userResponses) {
   ## Questions
   If there are any questions please reach out to me at ${userResponses.email}
 
-  Github profile: ${userResponses.profile}` 
+  Github profile: [${userResponses.profile}](https://github.com/${userResponses.profile})` 
   
 }
 
 module.exports = generateMarkdown;
+
+
+
